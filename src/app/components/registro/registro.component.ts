@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Usuarios } from 'src/app/models/usuarios';
+import { Usuario } from 'src/app/models/usuarios';
 import { HotToastService } from '@ngneat/hot-toast';
 import { Router } from '@angular/router';
+import { UsuariosService } from 'src/app/services/usuarios.service';
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -16,13 +17,23 @@ export class RegistroComponent  {
     });
 
  
-    constructor(private fb: FormBuilder, private toast: HotToastService,private router: Router) { }
+    constructor(private fb: FormBuilder,
+       private toast: HotToastService,
+       private router: Router,
+       private usuarioService: UsuariosService
+       ) { }
 
-    onSubmit(model:Usuarios) {
-      console.log('usuario guardado correctamente: ', model);
-      console.warn(this.registroForm.value);
-     this.toast.success('Usuario Guardado Correctamente');
-     this.router.navigateByUrl('/home');
-
+    onSubmit(model:Usuario) {
+      this.usuarioService.getUsuarios()
+        .subscribe((usuarios: Usuario[]) => {
+          let usuario = usuarios.find(usuario => usuario.usuario == model.usuario)
+          if(usuario) this.router.navigateByUrl('/error/el usuario ya existe')
+          else {
+            this.usuarioService.postUsuario(model)
+              .subscribe((usuario: Usuario) => {
+                this.router.navigateByUrl('/home');
+              })
+          }
+        })
     }
  }
