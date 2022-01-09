@@ -7,7 +7,7 @@ import { throwError } from 'rxjs';
 })
 export class UtilService {
 
-  URL_BASE:string = 'https://61a4e8fe4c822c0017041f9e.mockapi.io'
+  URL_BASE:string = 'https://61b9322038f69a0017ce5f3a.mockapi.io/'
 
   getHttpOptions() {
     return {

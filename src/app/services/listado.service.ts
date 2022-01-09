@@ -15,7 +15,7 @@ export class ListadoService {
     private http: HttpClient,
     private utilService :  UtilService
   ) {
-    this.url = this.utilService.URL_BASE + '/peliculas/'
+    this.url = this.utilService.URL_BASE + 'peliculas/'
   }
 
 
