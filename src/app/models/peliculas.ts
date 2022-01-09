@@ -1,8 +1,8 @@
 export interface Pelicula{
-    id: number;
-    year: number;
-    nombre: string;
-    tipoPelicula: string;
-    precio: number;
-    url : string
+    id?: string  | null,
+    year: number | null,
+    nombre: string  | null,
+    tipoPelicula: string | null,
+    precio: number | null,
+    url : string | null,
 }

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core'
-import { Peliculas } from 'src/app/mock-peliculas';
 import { Pelicula } from 'src/app/models/peliculas';
-
+import { ListadoService } from 'src/app/services/listado.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-listado',
   templateUrl: './listado.component.html',
@@ -10,7 +10,9 @@ import { Pelicula } from 'src/app/models/peliculas';
   
 })
 
-export class ListadoComponent  {
+export class ListadoComponent implements OnInit {
+
+peliculas: Pelicula[]=[]
 
 //   @Input() items = [ 
 //   { id: 1, year: 1989, nombre: 'Chucky', tipoPelicula: 'Terror', precio: 19.00, url:'/assets/images/chucky1.jpg'},
@@ -25,11 +27,27 @@ export class ListadoComponent  {
 //   { id: 10, year: 2019, nombre: 'SAW 7', tipoPelicula: 'Terror', precio: 50, url:'/assets/images/saw7.jpg'}
 // ]
 
+constructor(
+  private listadoService: ListadoService,
+  private router:Router,
+) {}
 
-addToCart(model: Pelicula)
-{
-debugger;
+ngOnInit(): void {
 
+    this.getPeliculas()
+ 
 }
 
+
+getPeliculas() {
+//  this.pidiendo = true
+  this.listadoService.getPeliculas()
+    .subscribe((peliculas: Pelicula[]) => {
+      console.log(peliculas)
+      setTimeout(() => {
+        this.peliculas = peliculas
+        //this.pidiendo = false
+      },500)
+    })
+}
 }
