@@ -1,0 +1,6 @@
+<h2 class="text-center">Catalogo de Peliculas</h2>
+
+
+<div *ngFor="let pelicula of Peliculas | async">
+{{pelicula  | json}}
+</div>
