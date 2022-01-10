@@ -29,7 +29,7 @@ export class RegistroComponent  {
         .subscribe((usuarios: Usuario[]) => {
           let usuario = usuarios.find(usuario => usuario.usuario == model.usuario)
           if(usuario) 
-           console.log("Ususario ya existe")
+           console.log("Usuario ya existe")
           else {
             this.usuarioService.postUsuario(model)
               .subscribe((usuario: Usuario) => {
