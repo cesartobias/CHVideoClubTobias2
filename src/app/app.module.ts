@@ -12,7 +12,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { HotToastModule } from '@ngneat/hot-toast';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { ListadousuariosComponent } from './components/listadousuarios/listadousuarios.component'
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http'
     MenuComponent,
     CarritoComponent,
     HomeComponent,
+    ListadousuariosComponent,
 
   ],
   imports: [

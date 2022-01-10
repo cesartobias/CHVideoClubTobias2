@@ -4,6 +4,7 @@ import { Usuario } from 'src/app/models/usuarios';
 import { HotToastService } from '@ngneat/hot-toast';
 import { Router } from '@angular/router';
 import { UsuariosService } from 'src/app/services/usuarios.service';
+
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -27,7 +28,8 @@ export class RegistroComponent  {
       this.usuarioService.getUsuarios()
         .subscribe((usuarios: Usuario[]) => {
           let usuario = usuarios.find(usuario => usuario.usuario == model.usuario)
-          if(usuario) this.router.navigateByUrl('/error/el usuario ya existe')
+          if(usuario) 
+           console.log("Ususario ya existe")
           else {
             this.usuarioService.postUsuario(model)
               .subscribe((usuario: Usuario) => {

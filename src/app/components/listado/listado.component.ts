@@ -33,9 +33,7 @@ constructor(
 ) {}
 
 ngOnInit(): void {
-
     this.getPeliculas()
- 
 }
 
 
