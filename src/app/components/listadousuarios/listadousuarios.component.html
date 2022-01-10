@@ -1,14 +1,17 @@
 <h2 class="text-center">Listado de Usuarios</h2>
-<div class="container">
-    <div class="row">
-    <div class="col">#</div>
-    <div class="col">Nombre</div>
-    <div class="col">Usuario</div>
+  <div class="jumbotron">
+  <div class="table-responsive">
+    <table class="table">
+        <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Usuario</th>
+         </tr>
+        <tr *ngFor="let usuario of usuarios; index as i">
+            <td>{{ i + 1 }}</td>
+            <td>{{ usuario.nombre }}</td>
+            <td>{{ usuario.usuario }}</td>
+         </tr>
+    </table>
 </div>
-    <div class="row" *ngFor="let usuario of usuarios; index as i">
-       <div class="w-100"></div>
-       <div class="col">{{i + 1 }}</div>
-       <div class="col">{{ usuario.nombre }}</div>
-      <div class="col">{{ usuario.usuario }}</div>
-    </div>
-  </div>
+</div>
