@@ -13,8 +13,9 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { HotToastModule } from '@ngneat/hot-toast';
 import { HttpClientModule } from '@angular/common/http';
-import { ListadousuariosComponent } from './components/listadousuarios/listadousuarios.component'
-
+import { ListadousuariosComponent } from './components/listadousuarios/listadousuarios.component';
+import { RegistrarPeliculaComponent } from './components/registrar-pelicula/registrar-pelicula.component'
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { ListadousuariosComponent } from './components/listadousuarios/listadous
     CarritoComponent,
     HomeComponent,
     ListadousuariosComponent,
+    RegistrarPeliculaComponent,
 
   ],
   imports: [
@@ -33,6 +35,7 @@ import { ListadousuariosComponent } from './components/listadousuarios/listadous
     ReactiveFormsModule,
    AppRoutingModule,
    HttpClientModule,
+   FormsModule,
    RouterModule.forRoot([]),
    HotToastModule.forRoot()
   ],

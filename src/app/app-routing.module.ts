@@ -6,11 +6,13 @@ import { ListadousuariosComponent } from './components/listadousuarios/listadous
 import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { HomeComponent } from './components/home/home.component';
+import { RegistrarPeliculaComponent } from './components/registrar-pelicula/registrar-pelicula.component';
 
 const routes: Routes = [
    {  path:'', redirectTo:'/login', pathMatch:'full'},
    {  path:'login',component: LoginComponent },
    {  path:'registro',component: RegistroComponent },
+   {  path:'registrar-pelicula',component: RegistrarPeliculaComponent },
    {  path:'listado',component: ListadoComponent },
    {  path:'listadousuarios',component: ListadousuariosComponent },
    {  path:'carrito',component: CarritoComponent },

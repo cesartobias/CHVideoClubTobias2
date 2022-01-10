@@ -1,0 +1,16 @@
+<div class="jumbotron">
+    <h2>Registro de Peliculas</h2>
+    <hr>
+    <h4>Ingrese informacion de la película</h4>
+    <br>
+    <div class="form-group w-100">
+        <input type="text" class="form-control mb-1" placeholder="Titulo" [(ngModel)]="pelicula.nombre">
+        <input type="text" class="form-control mb-1" placeholder="Genero" [(ngModel)]="pelicula.tipoPelicula">
+        <input type="number" class="form-control mb-1" placeholder="Año" [(ngModel)]="pelicula.year">
+        <input type="number" class="form-control mb-1" placeholder="Precio" [(ngModel)]="pelicula.precio">
+        <input type="number" class="form-control mb-1" placeholder="Stock" [(ngModel)]="pelicula.stock">
+        <input type="text" class="form-control mb-1" placeholder="URL Foto" [(ngModel)]="pelicula.url">
+    </div>
+    <button class="btn btn-success mt-1 mb-2" (click)="postPelicula()">Guardar</button>
+</div>
+
