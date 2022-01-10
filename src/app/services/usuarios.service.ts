@@ -17,8 +17,6 @@ export class UsuariosService {
     this.url = this.utilService.URL_BASE + '/usuarios/'
   }
 
-
-
     /* GET */
     getUsuarios() {
       return this.http.get<Usuario[]>(this.url).pipe(
